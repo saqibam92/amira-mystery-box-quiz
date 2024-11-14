@@ -4,6 +4,7 @@
   const infoBox = document.querySelector(".info_box");
   const exitBtn = infoBox.querySelector(".buttons .quit");
   const continueBtn = infoBox.querySelector(".buttons .restart");
+
   const quizBox = document.querySelector(".quiz_box");
   const resultBox = document.querySelector(".result_box");
   const optionList = document.querySelector(".option_list");
@@ -34,17 +35,19 @@
     e.preventDefault();
     const name = participantForm.name.value;
     const mobile = participantForm.mobile.value;
+    const email = participantForm.email.value;
 
     try {
       const response = await fetch(
-        "https://amira-quiz-backend.onrender.com/api/participants",
+        // "https://amira-quiz-backend.onrender.com/api/participants",
+        "http://localhost:8080/api/participants",
         // "https://quiz-backend-y0gx.onrender.com/api/participants",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ name, mobile }),
+          body: JSON.stringify({ name, mobile, email }),
         }
       );
 
@@ -187,7 +190,8 @@
     // Send answers to the backend
     try {
       const response = await fetch(
-        "https://amira-quiz-backend.onrender.com/api/answers",
+        "http://localhost:8080/api/answers",
+        // "https://amira-quiz-backend.onrender.com/api/answers",
         // "https://quiz-backend-y0gx.onrender.com/api/answers",
         {
           method: "POST",
