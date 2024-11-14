@@ -39,8 +39,8 @@
 
     try {
       const response = await fetch(
-        // "https://amira-quiz-backend.onrender.com/api/participants",
-        "http://localhost:8080/api/participants",
+        "https://amira-quiz-backend.onrender.com/api/participants",
+        // "http://localhost:8080/api/participants",
         // "https://quiz-backend-y0gx.onrender.com/api/participants",
         {
           method: "POST",
@@ -190,8 +190,8 @@
     // Send answers to the backend
     try {
       const response = await fetch(
-        "http://localhost:8080/api/answers",
-        // "https://amira-quiz-backend.onrender.com/api/answers",
+        // "http://localhost:8080/api/answers",
+        "https://amira-quiz-backend.onrender.com/api/answers",
         // "https://quiz-backend-y0gx.onrender.com/api/answers",
         {
           method: "POST",
